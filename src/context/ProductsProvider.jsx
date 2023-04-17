@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const PORT = 3001;
+const PORT = 3000;
 
 export const ProductsContext = createContext();
 
@@ -18,7 +18,7 @@ const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     const fectchProducts = async () => {
-      const { data } = await axios.get(`http://localhost:${PORT}/products`);
+      const { data } = await axios.get(`http://localhost:${PORT}/api/products`);
       setProducts(data);
     };
     fectchProducts();

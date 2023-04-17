@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Meli from '../../public/meli-logo.jpg';
+import Buscape from '../../public/buscape-logo.png';
+import Image from 'next/image';
 
 const ProductCard = ({ title, description, price, image, link, from }) => {
   const [active, setActive] = useState(false);
@@ -23,7 +26,7 @@ const ProductCard = ({ title, description, price, image, link, from }) => {
             >
               Ir para o site
             </a>
-            <img
+            <Image
               className={from === 'Mercado Livre' ? 'w-32 h-32' : 'w-20 h-20 my-2'}
               src={from === 'Mercado Livre' ? Meli : Buscape}
               alt="logo"
