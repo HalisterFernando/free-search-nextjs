@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Meli from '../assets/meli-logo.jpg';
-import Buscape from '../assets/buscape-logo.png';
 
 const ProductCard = ({ title, description, price, image, link, from }) => {
   const [active, setActive] = useState(false);
@@ -15,9 +13,7 @@ const ProductCard = ({ title, description, price, image, link, from }) => {
         </div>
         <div className="w-1/2 md:w-1/3">
           <h3 className="md:text-2xl">{title}</h3>
-          <p className="font-semibold md:text-2xl">
-            {from === 'Mercado Livre' ? `R$ ${price},00` : price}
-          </p>
+          <p className="font-semibold md:text-2xl">{from === 'Mercado Livre' ? `R$ ${price},00` : price}</p>
           <div className="flex flex-col gap-2 mt-2 relative">
             <a
               className="bg-free-orange border border-free-black shadow-sm p-2 rounded w-32 text-center"
@@ -39,10 +35,7 @@ const ProductCard = ({ title, description, price, image, link, from }) => {
           <p>{description}</p>
         </div>
       </div>
-      <button
-        className="bg-free-orange border border-black rounded p-1 md:hidden"
-        onClick={() => toggleDescription()}
-      >
+      <button className="bg-free-orange border border-black rounded p-1 md:hidden" onClick={() => toggleDescription()}>
         Ver descrição
       </button>
       <div

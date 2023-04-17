@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { ProductsContext } from '../context/ProductsProvider';
-import FreeSearchSm from '../assets/free-search-mobile.png';
-import FreeSearchMd from '../assets/free-search.png';
+import Image from 'next/image';
+import LogoSm from '../../public/free-search-mobile.png';
+import LogoMd from '../../public/free-search.png';
 
 export default function Header() {
   const { store, setStore, category, setCategory } = useContext(ProductsContext);
@@ -27,13 +28,11 @@ export default function Header() {
 
   return (
     <header className="w-full py-2 bg-free-orange border-b flex justify-around items-center">
-      <div className="border border-black w-16 h-16 rounded-full md:w-48 md:h-14 md:rounded-md">
-        <img
-          className="w-full h-full object-cover rounded-full md:hidden"
-          src={FreeSearchSm}
-          alt="free-search logo"
-        />
-        <img className="hidden w-full h-full rounded-md md:block " src={FreeSearchMd} alt="" />
+      <div className="border border-black w-16 h-16 rounded-full md:hidden relative">
+        <Image className="rounded-full" fill src={LogoSm} alt="free-search logo" />
+      </div>
+      <div className="hidden border border-black md:w-48 md:h-14 md:rounded-md md:block relative">
+        <Image className="rounded-md" fill src={LogoMd} alt="free-search-logo" />
       </div>
       <div className="flex gap-2">
         <label htmlFor="stores">
@@ -48,12 +47,7 @@ export default function Header() {
         </label>
         <label htmlFor="categories">
           <h5 className="font-medium mb-1">Categorias</h5>
-          <select
-            className="rounded"
-            onClick={(ev) => handleCategory(ev)}
-            name="categories"
-            id="categories"
-          >
+          <select className="rounded" onClick={(ev) => handleCategory(ev)} name="categories" id="categories">
             <option defaultValue value="celular">
               Todas
             </option>
