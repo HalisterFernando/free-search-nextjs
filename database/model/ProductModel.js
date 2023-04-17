@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 mongoose.Promise = global.Promise;
 
-export const productSchema = Schema({
+const productSchema = Schema({
   link: {
     type: String,
     required: true,
@@ -33,3 +33,5 @@ export const productSchema = Schema({
     required: true,
   },
 });
+
+export default productSchema;
