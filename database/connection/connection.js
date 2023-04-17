@@ -1,17 +1,17 @@
 import mongoose from 'mongoose';
 
 const { connect } = mongoose;
+import 'dotenv/config';
 
 const options = {
   dbName: 'free_search',
 };
 
+const mongoUri = process.env.MONGODB_URI;
+
 const connectToDatabase = async () => {
   try {
-    await connect(
-      'mongodb+srv://admin:yPHtcxCqUfUnsclu@freesearchcluster.mz7gh3y.mongodb.net/?retryWrites=true&w=majority',
-      options
-    );
+    await connect(mongoUri, options);
     console.log('Conectado ao banco de dados');
   } catch (err) {
     console.error(err.message);
