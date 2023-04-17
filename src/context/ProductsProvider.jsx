@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-export { getProducts } from '../pages/api/products';
 import axios from 'axios';
 
 export const ProductsContext = createContext();
