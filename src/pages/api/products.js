@@ -1,12 +1,15 @@
 import connectToDatabase from '../../../database/connection/connection';
-import Product from '../../../database/model/Product';
+import mongoose from 'mongoose';
+import productSchema from '../../../database/model/Product';
+
+const Products = mongoose.model('Products', productSchema);
 
 connectToDatabase();
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const products = await Product.find();
+      const products = await Products.find();
 
       return res.status(200).json(products);
     } catch (err) {
