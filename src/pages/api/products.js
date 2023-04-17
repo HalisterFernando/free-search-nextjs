@@ -1,7 +1,8 @@
 import connectToDatabase from '../../../database/connection/connection';
 import mongoose from 'mongoose';
+import productSchema from '../../../database/model/Product';
 
-const Products = mongoose.model('Products');
+const Products = mongoose.model('Products', productSchema);
 
 connectToDatabase();
 
