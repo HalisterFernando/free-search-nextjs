@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 
-const { Schema, model } = mongoose;
-
-const productSchema = new Schema({
+const productSchema = new mongoose.Schema({
   link: {
     type: String,
     required: true,
@@ -33,6 +31,4 @@ const productSchema = new Schema({
   },
 });
 
-const Product = model('Products', productSchema);
-
-export default Product;
+const Product = mongoose.model('Products', productSchema);
