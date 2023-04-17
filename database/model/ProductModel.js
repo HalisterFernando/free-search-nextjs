@@ -1,6 +1,9 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+mongoose.Promise = global.Promise;
+
+export const productSchema = Schema({
   link: {
     type: String,
     required: true,
@@ -30,5 +33,3 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
 });
-
-export default productSchema;
