@@ -2,6 +2,9 @@
 
 Este projeto foi feito com a raspagem de dados do Mercado Livre e Buscapé, possibilitando a busca por um produto de 3 categorias sendo elas celular, refrigerador e televisor, possibilitando filtrar as buscas também pelo nome do produto e pela loja. 
 
+## Deploy 
+[Free Search](free-search-nextjs.vercel.app)
+
 ## Tecnologias :computer:
 
 ### Front-end :art:
